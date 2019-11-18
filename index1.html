@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:700,900&display=swap" rel="stylesheet">
+	<style>
+		body,h1,p,li,ul,div{magin:0; padding:0;}
+		html{font-family: 'Noto Sans KR', sans-serif;}
+	</style>
+</head>
+<body>
+	<section>
+		<h2 id="question1">가을을 맞이하여 책장 정리을 하였는데 책상 위에 작은 사진액자가</br>
+		하나 있습니다. 어떤 사진이 연상되나요?</h2>
+		<input type="radio" name="q1" value="1" class="radio1">어린이 사진
+		<input type="radio" name="q1" value="2" class="radio1">도심의 야경
+		<input type="radio" name="q1" value="3" class="radio1">산 풍경
+		<input type="radio" name="q1" value="4" class="radio1">동물
+		<button id="chk">확인해보기</button>
+	</section>
+
+	<script type="text/javascript">
+		chk.onclick =  function(){
+			var t = document.getElementsByClassName("radio1");
+			for(var i=0; i<t.length; i++){
+				if(t[i].checked == true){
+					if(i == 0){
+						question1.innerHTML = "당신은 눈물과 인정에 약한 성향입니다.";
+					}else if(i == 1){
+						question1.innerHTML = "인간 관계가 중요하다고 생각하네요. <br> 혹시 술을 좋아하시나요?";
+					}else if(i == 2){
+						question1.innerHTML = "약간의 짐만 있어도 불안한 성격입니다.";
+					}else if(i == 3){
+						question1.innerHTML = "이성으로부터 많은 관심을 받으며, 타인을 배려하는 성향입니다.";
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+

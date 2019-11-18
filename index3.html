@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:700,900&display=swap" rel="stylesheet">
+	<style>
+		body,h1,h2,h3,p,li,ul,div,section,input {margin:0; padding:0;}
+		html{font-family: 'Noto Sans KR', sans-serif;}
+		section{height:100vh; position: relative;}
+		section h2{width:70%; font-size: 30px; font-weight: 700;position: absolute;
+					left:15%;top:40vh;text-align: center; color:white;}
+		section .radio-container{ position: absolute; top:60vh; width:100%; text-align: center; font-size: 24px; font-weight: 900; }
+		section .radio-container label{ vertical-align: middle; }
+		section .radio-container input[type="radio"]{width:20px; height:20px;}
+		.s1{background: red;}
+		.s2{background: green;}
+		.s3{background: blue;}
+
+	</style>
+</head>
+<body>
+	<section class="s1">
+		<h2 id="question1">가을을 맞이하여 책장 정리을 하였는데 책상 위에 작은 사진액자가</br>
+		하나 있습니다. 어떤 사진이 연상되나요?</h2>
+		<div class="radio-container">
+			<label><input type="radio" name="q1" value="1" class="radio1">어린이 사진&nbsp;</label>
+			<label><input type="radio" name="q1" value="2" class="radio1">도심의 야경&nbsp;</label>
+			<label><input type="radio" name="q1" value="3" class="radio1">산 풍경&nbsp;</label>
+			<label><input type="radio" name="q1" value="4" class="radio1">동물&nbsp;</label><br>
+			<button id="chk">확인해보기</button>
+		</div>
+	</section>
+	<section class="s2">
+		<h2 id="question2">갑자기 당신에게 카메라를 들이댄다면 어떻게 하시겠습니까?</h2>
+		<div class="radio-container">
+			<input type="radio" name="q2" value="1" class="radio2">멋진 포즈를 취한다&nbsp;
+			<input type="radio" name="q2" value="2" class="radio2">주위사람들에게 같이 찍자고 한다&nbsp;<input type="radio" name="q2" value="3" class="radio2">피한다&nbsp;
+			<input type="radio" name="q2" value="4" class="radio2">장난스런 표정을 짓는다&nbsp;<br>
+			<button id="chk2">확인해보기</button>
+		</div>
+	</section>
+	<section class="s3">
+		<h2 id="question3">다음중 좋아하는 빵을 골라보세요.</h2>
+		<div class="radio-container">
+			<input type="radio" name="q3" value="1" class="radio3">바게트빵·식빵&nbsp;
+			<input type="radio" name="q3" value="2" class="radio3">생크림케익&nbsp;
+			<input type="radio" name="q3" value="3" class="radio3">카스테라&nbsp;
+			<input type="radio" name="q3" value="4" class="radio3">페이스트리·파이&nbsp;<br>
+			<button id="chk3">확인해보기</button>
+		</div>
+	</section>
+
+	<script type="text/javascript">
+		chk.onclick =  function(){
+			var t = document.getElementsByClassName("radio1");
+			for(var i=0; i<t.length; i++){
+				if(t[i].checked == true){
+					if(i == 0){
+						question1.innerHTML = "당신은 눈물과 인정에 약한 성향입니다.";
+					}else if(i == 1){
+						question1.innerHTML = "인간 관계가 중요하다고 생각하네요. <br> 혹시 술을 좋아하시나요?";
+					}else if(i == 2){
+						question1.innerHTML = "약간의 짐만 있어도 불안한 성격입니다.";
+					}else if(i == 3){
+						question1.innerHTML = "이성으로부터 많은 관심을 받으며, 타인을 배려하는 성향입니다.";
+					}
+				}
+			}
+		}
+
+		chk2.onclick =  function(){
+			var t = document.getElementsByClassName("radio2");
+			for(var i=0; i<t.length; i++){
+				if(t[i].checked == true){
+					if(i == 0){
+						question2.innerHTML = "당신은 속마음을 드러내지 않아서 거짓말을 잘하는군요. 양다리 스타일입니다.";
+					}else if(i == 1){
+						question2.innerHTML = "당신은 밝은 성격이며 모임에서 호감을 주는 사람으로 모든이들에게 친절하군요.";
+					}else if(i == 2){
+						question2.innerHTML = "수줍음이 많은 당신. 자신감이 좀 부족하네요. 사람을 사귈 때는 많은 시간이 필요하군요.";
+					}else if(i == 3){
+						question2.innerHTML = "당신은 가볍게 사귀는 걸 좋아하고, 즐거운 만남을 좋아하고, 바람기가 조금 있네요. 하지만 좋아하는 사람에게는 순정파.";
+					}
+				}
+			}
+		}
+
+		chk3.onclick =  function(){
+			var t = document.getElementsByClassName("radio3");
+			for(var i=0; i<t.length; i++){
+				if(t[i].checked == true){
+					if(i == 0){
+						question3.innerHTML = "지루한 것을 싫어하기 때문에 뭔가 다른 것을 찾기 위해서 뛴다.";
+					}else if(i == 1){
+						question3.innerHTML = "분위기에 압도되는 로맨티스트. 영화감상 등을 취미로 하는 당신은 낭만이라는 것을 안다.";
+					}else if(i == 2){
+						question3.innerHTML = "항상 많은 사람들과 잘 어울리는 당신은 원만한 성격의 소유자로 자기관리를 잘해서 언제나 주변의 모범이 된다.";
+					}else if(i == 3){
+						question3.innerHTML = "무궁무진한 호기심으로 도전하는 당신. 그렇기 때문에 자신의 일에도 열정이 많은 사람이다.";
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+
